@@ -39,7 +39,7 @@
 
 ### [Sequence assembly, short read & long read](part_2/2F_assembly.md)
 
-### Genome annotation
+### [Genome annotation](part_2/2G_annotation.md)
 
 ## Part 3: Variant Discovery and Phylogenetics
 

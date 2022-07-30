@@ -88,6 +88,38 @@ WSL sets up a separate home folder for Ubuntu. We'll be doing most of our work i
 1. Open your Windows explorer from the command line: `explorer.exe ~` (tilde sign at the end)
 2. Drag the folder location into your favorites sidebar in the Windows explorer.
 
+
+# Step 3 - Mac only: Install Xcode command line tools and Homebrew
+
+In the Mac terminal, run the following command:
+
+```
+xcode-select --install
+```
+
+The download and installation will take several minutes. Test the installation after download with the following command:
+
+```
+xcode-select -p
+```
+
+The installation was successful if the output is something like this:
+
+```
+/Library/Developer/CommandLineTools
+```
+
+[Homebrew](https://brew.sh/) is a software installation service for the Mac. Installing Homebrew is optional for this workshop, but may help you more quickly get around any problems with missing software on different implementations and versions of Mac OS that could unexpectedly come up. It's nice to have it if you need it.
+
+To install:
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Easy!
+
+
 ---
 
 #[Back to table of contents](../README.md)
