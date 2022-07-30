@@ -52,6 +52,8 @@ If you want to direct the output of a command that usually prints to the screen 
 * Example: `cat genome.fasta > new_file.fasta`
 * **WARNING**: If you redirect to an existing file, it will be overwritten by the new file. The overwritten data will not be able to be recovered. 
 
+To addend a file, i.e. to add new data to the end of the file wihtout overwriting the old data, you can use the `>>` redirect instead.  
+
 ## Section 1.8 `cp`
 
 This is the copy function. It allows you to make a copy of a file in a new name and/or new locataion. The usage is: 
@@ -97,6 +99,28 @@ rm <file to be deleted>
 
 rm -r <directory to be deleted>
 ```
+
+## Section 1.12 `|`
+
+The `|` is the "pipe" character. It is used to string commands together such that the output of one command becomes the input to the next command.
+
+Here is a simple example of three commands piped together:
+
+```
+echo "B C A" | tr " " "\n" | sort
+```
+
+This prints the letters "B C A", translates the spaces (`" "`) into new lines or returns (`"\n"`) and then sorts the resulting list alphabetically such that the output of this command is: 
+
+```
+A
+B
+C
+```
+
+Piping is a good way to save time or easily execute complex commands. In later exercises we'll also show how this approach can save storage space by skipping the creation of large intermediate files.
+
+---
 
 # Section 2 - Useful applications
 
