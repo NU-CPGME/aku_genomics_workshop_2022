@@ -121,7 +121,7 @@ For more information on Docker and containers, [here](https://docs.docker.com/ge
 
 ---
 
-#[Back to table of contents](../README.md)
+# [Back to table of contents](../README.md)
 
 ---
 

@@ -201,7 +201,7 @@ Some useful commands in `nano`
 
 ---
 
-#[Back to table of contents](../README.md)
+# [Back to table of contents](../README.md)
 
 ---
 
