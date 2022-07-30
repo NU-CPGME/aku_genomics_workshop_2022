@@ -20,14 +20,21 @@ conda activate asssembly
 
 FastQC provides quality metrics for read files and shows the output in graphical and text formats. 
 
-Command:
+_Commands_
 
 ```
-fastqc /path/to/reads.fastq.gz
+fastqc reads/GAS_1.fastq.gz reads/GAS_2.fastq.gz
 ```
 
-This will generate a .html file that can be viewed in a web browser as well as a zip file with more detailed data about the reads. 
+_Outputs_
 
+Files | Description
+--- | ---
+GAS_1_fastqc.html | Read characteristics in graphical format. Can be opened with a web browser like Chrome
+GAS_1_fastqc.zip | Zip file containing results in text versions
+
+
+More detailed information about how to interpret the results can be found in the manual: [https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/)
 
 ## Section 2 - Read trimming
 
@@ -38,10 +45,6 @@ We are going to use [trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic
 Trimmomatic comes with adapter sequence files corresponding to most Illumina library prep methods. You just have to make sure to use the one that matches the library prep kit used to generate your sequencing libraries.
 
 _Commands_ 
-
-```
-conda activate assembly
-```
 
 ```
 trimmomatic \

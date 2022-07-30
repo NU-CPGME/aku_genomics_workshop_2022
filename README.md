@@ -37,14 +37,14 @@
 
 ### [Quality control and trimming of sequencing reads](part_2/2E_reads.md)
 
-### [Sequence assembly, short read & long read](part_2/2F_assembly.md)
+### [Sequence assembly](part_2/2F_assembly.md)
 
 ### [Genome annotation](part_2/2G_annotation.md)
 
 ## Part 3: Variant Discovery and Phylogenetics
 
 
-### Reference-based sequence alignment and variant calling
+### [Reference-based sequence alignment and variant calling](part_3/3A_alignment.md)
 
 ### Introduction to phylogenetics
 
