@@ -35,7 +35,7 @@
 
 ### Navigating the NCBI sequence database & data deposition
 
-### Quality control and trimming of sequencing reads
+### [Quality control and trimming of sequencing reads](part_2/2E_reads.md)
 
 ### Sequence assembly, short read & long read
 

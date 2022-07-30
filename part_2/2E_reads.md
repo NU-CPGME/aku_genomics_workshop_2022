@@ -142,7 +142,8 @@ Below is some example output from our assembly viewed in a web browser.
 
 ---
 
-In the next section we'll extract some more information from our assembly by annotating the genome and also using Blast to find sequences: [Genome annotation](5_annotation.md)
+# [Back to table of contents](../README.md)
+
 
 ---
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
