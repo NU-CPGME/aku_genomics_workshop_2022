@@ -31,7 +31,7 @@
 
 ### Overview of sample collection, specimen processing, and sequencing library prep
 
-### Introduction to sequence data and file types
+### [Introduction to sequence data and file types](part_2/2C_file_types.md)
 
 ### Navigating the NCBI sequence database & data deposition
 

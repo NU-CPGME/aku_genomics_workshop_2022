@@ -46,7 +46,17 @@ This workshop will use a combination of **visual** (otherwise known as GUI or "p
 * To install, download the correct version for your computer from here: [http://doua.prabi.fr/software/seaview](http://doua.prabi.fr/software/seaview) and follow the instructions on that site for proper installation. 
 * On Macs, you'll probably get a security alert when you try to open the program for the first time. To override this (it's OK!) open your _System Preferences_, click the _Security & Privacy_ icon, then click "Allow" next to SeaView in the window. Should be good to go.
 
-### Step 1.D - R and RStudio <img src="../images/Rlogo.svg" width="50"/> &nbsp; <img src="../images/rstudio-icon.png" width="50"/> 
+### Step 1.D - FastQC <img src="../images/fastqc.png" width="50"/>
+
+[FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) is used to assess characteristcs and quality of sequencing read files.
+
+* On Windows or Linux, you may need to install Java Runtime first. To tell if you have java already installed or not, in either the Windows PowerShell or Linux Terminal, type `java -version`. If you don't get any output or there is an error, then download the correct version of java runtime for your computer here: [https://adoptium.net/temurin/releases](https://adoptium.net/temurin/releases)
+* Windows / Linux version: [FastQC v0.11.9](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.9.zip)
+* Mac version: [FastQC v0.11.9](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.9.dmg)
+* More information about installing the software [here](https://raw.githubusercontent.com/s-andrews/FastQC/master/INSTALL.txt). 
+
+
+### Step 1.E - R and RStudio <img src="../images/Rlogo.svg" width="50"/> &nbsp; <img src="../images/rstudio-icon.png" width="50"/> 
 
 R is a statistical and graphics programming and analysis software with several other applications in analysis of genomics data. RStudio is a an application for programming and running R code. You will also need to install both, but you can either do this now or we will do it later in the workshop.
 
@@ -54,7 +64,7 @@ R is a statistical and graphics programming and analysis software with several o
 * RStudio software download and installation instructions: [https://www.rstudio.com/products/rstudio/download/](https://www.rstudio.com/products/rstudio/download/)
 
 
-### Step 1.E - Terminal <img src="../images/terminal_mac.png" width="50"/> &nbsp; <img src="../images/terminal_windows.png" width="50"/> &nbsp; <img src="../images/terminal_linux.png" width="50"/>  
+### Step 1.F - Terminal <img src="../images/terminal_mac.png" width="50"/> &nbsp; <img src="../images/terminal_windows.png" width="50"/> &nbsp; <img src="../images/terminal_linux.png" width="50"/>  
 
 You shouldn't need to install this. A Terminal program comes pre-installed on MacOS, Windows 10 and up, and Linux distributions. Please take this opportunity to search for your Terminal program on your own system as you will need it for the next step.  
 
