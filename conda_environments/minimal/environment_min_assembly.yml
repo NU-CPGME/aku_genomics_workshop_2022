@@ -1,0 +1,12 @@
+name: assembly
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - fastqc
+  - quast
+  - fastp
+  - trimmomatic
+  - spades
+prefix: /home/egonozer/miniconda3/envs/assembly

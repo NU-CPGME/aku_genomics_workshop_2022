@@ -27,7 +27,7 @@
 ## Part 2: Next Generation Sequencing 
 
 
-### Introduction to Next Generation Sequencing theory and platforms
+### [Introduction to Next Generation Sequencing theory and platforms](part_2/2A_intro.md)
 
 ### Overview of sample collection, specimen processing, and sequencing library prep
 
@@ -37,7 +37,7 @@
 
 ### [Quality control and trimming of sequencing reads](part_2/2E_reads.md)
 
-### Sequence assembly, short read & long read
+### [Sequence assembly, short read & long read](part_2/2F_assembly.md)
 
 ### Genome annotation
 

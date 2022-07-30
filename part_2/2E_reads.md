@@ -7,10 +7,26 @@
 
 ----
 
+**Before we start:**
+
+```
+conda activate asssembly
+```
+
+
 ## Section 1 - Read quality control with [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
 <img src="../images/fastqc_example.png" width=600/>
 
+FastQC provides quality metrics for read files and shows the output in graphical and text formats. 
+
+Command:
+
+```
+fastqc /path/to/reads.fastq.gz
+```
+
+This will generate a .html file that can be viewed in a web browser as well as a zip file with more detailed data about the reads. 
 
 
 ## Section 2 - Read trimming
@@ -24,7 +40,7 @@ Trimmomatic comes with adapter sequence files corresponding to most Illumina lib
 _Commands_ 
 
 ```
-conda activate cpgme_workshop
+conda activate assembly
 ```
 
 ```
@@ -60,85 +76,6 @@ Files | Description
 `GAS_trimmed_paired_1.fastq.gz` & `_2.fastq.gz` | Paired reads remaining after trimming
 `GAS_trimmed_unpaired_1.fastq.gz` & `_2.fastq.gz` | Unpaired reads remaining after trimming 
 
----
-
-## 4.2 Assembly
-
-Now we'll generate a _de novo_ whole genome assembly from our trimmed reads. For this we'll use the assembler [SPAdes](https://cab.spbu.ru/software/spades/) ([Github site](https://github.com/ablab/spades)).  
-
-**Commands**
-
-```
-spades.py \
-    -o GAS_assembly \
-    -1 GAS_trimmed_paired_1.fastq.gz \
-    -2 GAS_trimmed_paired_2.fastq.gz \
-    --cov-cutoff auto 
-```
-
-**Settings**
-
-Setting | Descripton
---- | ---
-`-o` | Name of the directory where the results will be output
-`-1` & `-2` | Forward and reverse read paired-end files, respectively
-`--cov-cutoff auto` | Remove contigs below a minimum amount of read coverage
-
-See [SPAdes manual](https://cab.spbu.ru/files/release3.15.2/manual.html) for version 3.15.2 for more detail on available options.
-
-> <img src="../images/warn.png" width="20" /> **_Note:_** Usually when you are using SPAdes to perform an assembly you'll also want to use the `--careful` setting. This setting reduces mismatches and short indels by aligning reads back to the contigs to check for errors. We are only skipping it here to save processing time in the workshop.
-
-**Outputs**
-
-All of the output files can be found in the `GAS_assembly` folder. There are a lot of files in there, so we're just going to pick a few of the most relevant to describe.
-
-Files | Description
---- | ---
-`contigs.fasta` | Assembly contig sequences.
-`scaffolds.fasta` | Scaffold sequnences. Scaffolds consist of contigs joined by N's at sites with paired reads support.
-`spades.log` | Log file. Useful for troubleshooting poor or failed assemblies.
-`assembly_graph.fasta` | Graph of assembly showing contig connections. May be useful for assembly quality assessment. Can be visualized with a graph viewer like [Bandage](https://rrwick.github.io/Bandage/)  
-
----
-
-## 4.3 Assembly statistics and quality assesment
-
-After assembly you'll want some sense of the quality of the assembly. This usually includes, but is not limited to, the total number of contigs or scaffolds, the total length of the sequence, and the GC content. 
-
-* Low numbers of contigs usually indicates a pretty good assembly where many unambiguous connections could be made. High numbers of contigs may indicate low read coverage or possible genome or read contamination from another source (though not always)
-* Total contig length (sum of the lengths of all contigs) should be compared to the expected genome size of the species or organism. [NCBI Genome](https://www.ncbi.nlm.nih.gov/genome/) is a good source of expected genome sizes. 
-* Percent GC content (i.e. the percentage of the sequence that is either cytosine or guanine bases) should also be compared to the expected genome GC content. 
-* N50 is length of the contig such that contigs that length or longer account for >= 50% of the total assembly size. A small N50 value may indicate a more fragmented assembly.
-
-A tool that can be used for calculating these values is [Quast](http://quast.sourceforge.net/quast.html). This software is available as either a command-line program or through an interactive website: <http://cab.cc.spbu.ru/quast/>
-
-> <img src="../images/warn.png" width="20" /> **_NOTE:_** I was planning to use the web version of Quast in this workshop, but lately the website has not been working very well, possibly because it is hosted on a server in Russia. To install the command-line version using Conda, enter the following command within your active "cpgme_workshop" environment: `conda install -c bioconda quast`
-
-**Commands**
-
-```
-quast GAS_assembly/contigs.fasta
-```
-
-**Settings**
-
-Clearly there are not very many settings for the basic quast functionality, just the path to the contigs file.  
-
-You can also use quast to compare to a closely related genome sequence using the `-r` setting to determine possible misassemblies. Just be warned that if your reference genome sequence is not very closely related, you may end up with a number of false-positive missassembly warnings. _Caveat emptor_. 
-
-**Outputs**
-
-By default, outputs will be put into a directory called "quast_results". Here are a few of the output files worth noting:
-
-Files | Description
---- | ---
-`report.html` | A report file that can be opened in a web browser like Chrome or Safari.
-`report.pdf` | A pdf version of the assembly report
-`report.tsv` | A tab-separated version of the report table that can be viewed in a spreadsheet program like Excel or in a text editor
-
-Below is some example output from our assembly viewed in a web browser. 
-
-<img src="../images/quast_example.png" />
 
 ---
 

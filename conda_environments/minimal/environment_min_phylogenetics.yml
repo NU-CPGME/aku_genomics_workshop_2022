@@ -1,0 +1,10 @@
+name: phylogenetics
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - treetime
+  - iqtree
+  - mafft
+prefix: /home/egonozer/miniconda3/envs/phylogenetics
