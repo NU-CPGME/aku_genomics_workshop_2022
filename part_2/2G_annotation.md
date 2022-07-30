@@ -5,15 +5,17 @@
 *Egon A. Ozer, MD PhD (<e-ozer@northwestern.edu>)*  
 *Ramon Lorenzo Redondo, PhD (<ramon.lorenzo@northwestern.edu>)*   
 
+---
+
 ```
 conda activate annotation
 ```
 
 <img src="../images/warn.png" width="25" /> WARNING: If you are using a Mac, the Conda version of prokka is too buggy for us to use. Instead, use the following commands to install prokka:
 
-If you have Homebrew installed: `brew install brewsci/bio/prokka`
+If you have [HomeBrew](../part_1/1A_computer_preparation.md#step-3---mac-only-install-xcode-command-line-tools-and-homebrew) installed: `brew install brewsci/bio/prokka`
 
-Otherwise:
+If you didn't install HomeBrew:
 
 ```
 sudo cpan Time::Piece XML::Simple Digest::MD5 Bio::Perl
