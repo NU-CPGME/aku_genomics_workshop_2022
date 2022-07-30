@@ -14,7 +14,7 @@ To use, you'll need the address of the server, a login name, and usually a passw
 Example:
 
 ```
-ssh egon@165.111.222.567
+ssh workshop@tty.sdf.org
 ``` 
 
 To close a ssh session, type `exit` 
