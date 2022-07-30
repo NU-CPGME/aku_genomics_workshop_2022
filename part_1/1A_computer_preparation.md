@@ -90,10 +90,7 @@ WSL sets up a separate home folder for Ubuntu. We'll be doing most of our work i
 
 ---
 
-# Next Steps and Troubleshooting
-
-You should now be ready to complete the workshop exercies.  
-In the next section, we'll download the example data: [Download example files](1_data_download.md)
+#[Back to table of contents](../README.md)
 
 ---
 

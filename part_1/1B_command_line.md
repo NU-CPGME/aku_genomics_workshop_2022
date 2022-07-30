@@ -1,4 +1,4 @@
-# Command Line and BASH Basics
+# Command Line Basics
 
 ### August 2022
 
@@ -284,7 +284,7 @@ John likes to eat figs
 
 ---
 
-In the next section, we'll learn a bit more about the different file types we'll be working with: [File types](3_file_types.md)
+#[Back to table of contents](../README.md)
 
 ---
 

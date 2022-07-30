@@ -14,15 +14,15 @@
 
 ## Part 1: Computational Resources
 
-###Preparing your computer for bioinformatics
+###[Preparing your computer for bioinformatics](part_1/1A_computer_preparation.md)
 
-###Introduction to command line navigation
+###[Introduction to command line navigation](part_1/1B_command_line.md)
 
-###Data transfer: FTP, rsync, wget
+###[Data transfer: FTP, rsync, wget](part_1/1C_transfer.md)
 
-###Installing and managing software: Conda, GitHub, and Docker
+###[Installing and managing software: Conda, GitHub, and Docker](part_1/1D_software.md)
 
-###Bash loops and basic automation
+###[Bash loops and basic automation](part_1/1E_bash.md)
 
 ## Part 2: Next Generation Sequencing 
 
