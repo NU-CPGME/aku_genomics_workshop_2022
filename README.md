@@ -29,9 +29,9 @@
 ## Part 2: Next Generation Sequencing 
 
 
-### [Introduction to Next Generation Sequencing theory and platforms](part_2/2A_intro.md)
+### Overview of study design and sample collection
 
-### Overview of sample collection, specimen processing, and sequencing library prep
+### [Introduction to Next Generation Sequencing](part_2/2B_intro.md) 
 
 ### [Introduction to sequence data and file types](part_2/2C_file_types.md)
 

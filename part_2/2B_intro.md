@@ -7,7 +7,7 @@
 
 ----
 
-Use the presentation time to download the demo data we'll be using in the exercises later: 
+Use the presentation time to download the demo data we'll be using in the exercises: 
 
 ### [Download data](https://downgit.github.io/#/home?url=https://github.com/NU-CPGME/aku_genomics_workshop_2022/tree/master/demo_data)
 
