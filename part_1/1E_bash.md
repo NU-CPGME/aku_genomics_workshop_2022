@@ -110,7 +110,76 @@ Suzy likes to eat pears
 John likes to eat figs
 ```
 
-## Section 3 - Shell script files
+## Section 3 - Basic substitution in Perl one-liners
+
+A frequent activity when managing data on the command line is manipulation of file names or other data. Most often, I find I'll want to use the prefix of input files in a loop to name the output files. Do do this, you often want to use a method for string manipulation. There are several tools for this such as [sed](https://www.grymoire.com/Unix/Sed.html) and [awk](https://www.gnu.org/software/gawk/manual/gawk.html), but we'll discuss one simple method: using regular expressions in a Perl one-line program.
+
+Regular expressions are patterns to search for in text. The command used most often in this context is the substute command. The command defines a pattern to match and a pattern to substitute the match with.
+
+Here is an example of a substitute command: `s/high/low/`
+
+The general format of the substitute command consists of four parts:
+
+* `s`: the substitute command
+* `/../../`: delimiters. Traditionally the `/` character is used as a delimiter, but any character can be used.
+* `high`: the regular expression pattern to be matched
+* `low`: the replacement string
+
+If we apply the substitute command above to an example string,
+
+```
+I've got friends in high places
+```
+
+the output will be:
+
+```
+I've got friends in low places
+```
+
+Regular expression don't just have to include perfect matches, but can include wildcard and repetiton characters to make the strings matched more flexible.
+
+Commonly used wildcards include:
+
+* `.`: match any character
+* `\s`: match whitespace character
+* `\S`: match non-whitespace character
+* `\d`: match digit character
+* `\t`: match tab character
+
+Commonly used repetitions include:
+
+* `*`: match 0 or more times
+* `+`: match 1 or more times
+* `{n}`: match exacty n times
+
+A longer list of wildcards and repetitions can be found [here](http://www.troubleshooters.com/codecorn/littperl/perlreg.htm).
+
+For example, in the string `genome_187.fasta`, applying the substitute command `s/\d+/one/` will give you the result `genome_one.fasta`. The command matched one or more digits (`\d+`) and replaced them with the string you provided (`one`).
+
+Now to actually apply the substitution command, you need to use Perl, a programming language built into MacOS and nearly all Linux distributions, to run it. For that we'll pipe the string we want to change into the perl one-liner command, which would look like this. 
+
+```
+echo "genome_187.fasta" | perl -pe "s/\d+/one/"
+```
+
+This construction can be very useful in bash loops, for example, when we want to extract file prefixes and assign them to a new variable. 
+
+For example:
+
+```
+for input in file1.fastq file2.fastq file3.fastq
+do
+    prefix=` echo $input | perl -pe "s/.fastq//" `
+    echo "$prefix.txt"
+done
+```
+
+Here we're looping through a list of three file names (file1.fastq, file2.fastq, and file3.fastq) assining each to the variable "input". We're then defining a new variable named "prefix" that is the result of a substitution command where the regular expression pattern ".fastq" is replaced with nothing, in effect removing the pattern from the string. We then print the prefix variable with a new suffix. Hopefully you can see how this might be useful for organizing the results of looped pipelines.
+
+If you want to play around and test the behavior of a regular expression to see if it will match the pattern in your data that you expect, there are several regular expression testers on the internet. This is the one I use most often because it does a good job of highlighting and explaining the matches: [Regular Expressions 101](https://regex101.com/)
+
+## Section 4 - Shell script files
 
 If there are sets of commands or loops that you use repeatedly, you probably don't want to type them over and over again. You can solve this by creating shell script files that contain all the commands you would usually type out one at a time. 
 
