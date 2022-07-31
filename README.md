@@ -3,7 +3,9 @@
 # PATHOGEN GENOMICS WORKSHOP
 
 ### Aga Khan University, Karachi, Pakistan
-### August 1 - 5, 2022
+**August, 2022**
+
+## [https://bit.ly/pathogen22](https://bit.ly/pathogen22)
 
 *Egon A. Ozer, MD PhD (<e-ozer@northwestern.edu>)*  
 *Ramon Lorenzo Redondo, PhD (<ramon.lorenzo@northwestern.edu>)*   
