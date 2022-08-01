@@ -17,28 +17,38 @@ In this section we're going to perform reference-based alignments using the sequ
 
 We'll start with alignment of the _S. pyogenes_ reads against the reference genome. [Snippy](https://github.com/tseemann/snippy) is a nice "all-in-one" pipeline for generating alignments and using those alignments to determine variants. If you supply a genbank file as the reference sequence, the program will also annnotate the variants, i.e. call synonymous, non-synonymous, or frameshift.
 
-<img src="../images/warn.png" width="25" /> NOTE: On MacOS, the conda version of snippy is broken. To install manually if you have [HomeBrew](../part_1/1A_computer_preparation.md#step-3---mac-only-install-xcode-command-line-tools-and-homebrew): 
-
-```
-brew install brewsci/bio/snippy
-brew install brewsci/bio/vt
-```
-
-If you don't have HomeBrew:
-
-```
-git clone https://github.com/tseemann/snippy.git $HOME/snippy
-echo "export PATH=$HOME/snippy:$PATH" >> ~/.bashrc
-source ~/.bashrc
-snippy --check
-
-``` 
+> <img src="../images/warn.png" width="25" /> NOTE: On MacOS, the conda version of snippy is broken. To install manually if you have [HomeBrew](../part_1/1A_computer_preparation.md#step-3---mac-only-install-xcode-command-line-tools-and-homebrew): 
+> 
+> ```
+> brew install brewsci/bio/snippy
+> brew install brewsci/bio/vt
+> ```
+> 
+> If you don't have HomeBrew:
+> 
+> ```
+> git clone https://github.com/tseemann/snippy.git $HOME/snippy
+> echo "export PATH=$HOME/snippy/bin:\$PATH" >> ~/.bashrc
+> source ~/.bashrc
+> snippy --check
+> 
+> ``` 
+> 
+> Then install the rest of items needed in the conda environment:
+> 
+> ```
+> conda create -n alignment ivar
+> ``` 
+>
+> 
 
 **Commands**
 
 ```
 conda activate alignment
+```
 
+```
 snippy \
 	--outdir GAS_alignment \
 	--reference reference/GAS_NGAS638.gbk \
@@ -46,6 +56,20 @@ snippy \
 	--R2 reads/GAS_2.fastq.gz \
 	--cpus 2
 ```
+
+> <img src="../images/warn.png" width="25" /> NOTE: If you have a newer version of MacOS, you may get an error right after this step in the process: 
+> 
+> ```
+> Running: fasta_generate_regions.py reference/ref.fa.fai 607112 > reference/ref.txt 2>> snps.log
+> ```
+> If so, it's due to a small glitch in how brewcamp installs python3. Just run the following command to fix it:
+> 
+> ```
+> ln -s "$(brew --prefix)/bin/python"{3,}
+> ```
+> 
+> Unfortunately, you may also have problems with vt if you have a newer Mac. As of this writing, the Brewcamp version of vt is broken for newer Macs. You can try to install vt from source using these instructions: [https://genome.sph.umich.edu/wiki/Vt#General](https://genome.sph.umich.edu/wiki/Vt#General)
+> 
 
 **Settings**
 
