@@ -13,6 +13,14 @@
 conda activate asssembly
 ```
 
+Using `cd`, navigate to the "demo_data" folder you downloaded today. 
+
+You should see this as the output of your `ls` command:
+
+```
+Alignments    MLTrees       Phylodynamics reads         reference
+```
+
 
 ## Section 1 - Read quality control with [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
