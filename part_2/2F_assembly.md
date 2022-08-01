@@ -61,9 +61,7 @@ After assembly you'll want some sense of the quality of the assembly. This usual
 * Percent GC content (i.e. the percentage of the sequence that is either cytosine or guanine bases) should also be compared to the expected genome GC content. 
 * N50 is length of the contig such that contigs that length or longer account for >= 50% of the total assembly size. A small N50 value may indicate a more fragmented assembly.
 
-A tool that can be used for calculating these values is [Quast](http://quast.sourceforge.net/quast.html). This software is available as either a command-line program or through an interactive website: <http://cab.cc.spbu.ru/quast/>
-
-> <img src="../images/warn.png" width="20" /> **_NOTE:_** I was planning to use the web version of Quast in this workshop, but lately the website has not been working very well, possibly because it is hosted on a server in Russia. To install the command-line version using Conda, enter the following command within your active "cpgme_workshop" environment: `conda install -c bioconda quast`
+A tool that can be used for calculating these values is [Quast](http://quast.sourceforge.net/quast.html). This software is available as either a command-line program or through an interactive website: <http://cab.cc.spbu.ru/quast/>. As the web version is intermittently down, we have already installed the command-line version with conda.
 
 **Commands**
 
@@ -90,6 +88,8 @@ Files | Description
 Below is some example output from our assembly viewed in a web browser. 
 
 <img src="../images/quast_example.png" />
+
+FYI: The N50 is used to assess assembly contiguity. It is defined as the length of the shortest contig for which longer and equal length contigs cover at least 50 % of the assembly.
 
 ---
 
