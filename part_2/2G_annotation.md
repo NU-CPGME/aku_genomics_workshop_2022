@@ -17,12 +17,14 @@ If you have [HomeBrew](../part_1/1A_computer_preparation.md#step-3---mac-only-in
 
 ```
 brew install brewsci/bio/prokka
+sudo cpan install Bio::SearchIO::hmmer
+
 ```
 
 If you didn't install HomeBrew:
 
 ```
-sudo cpan Time::Piece XML::Simple Digest::MD5 Bio::Perl
+sudo cpan Time::Piece XML::Simple Digest::MD5 Bio::Perl Bio::SearchIO::hmmer
 git clone https://github.com/tseemann/prokka.git $HOME/prokka
 $HOME/prokka/bin/prokka --setupdb
 ```
