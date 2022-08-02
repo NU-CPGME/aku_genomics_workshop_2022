@@ -60,6 +60,7 @@ For example, if you have several files in a directory named "genomes" ending wit
 ```
 for i in genomes/*.fasta
 do
+[etc.]
 ```
 
 
