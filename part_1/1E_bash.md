@@ -100,7 +100,7 @@ Multiple variable loop example:
 while read food name
 do
     echo "$name likes to eat $food"
-done
+done < variables_multi.txt
 ```
 
 The output will be:
