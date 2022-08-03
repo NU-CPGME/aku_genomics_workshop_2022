@@ -89,7 +89,7 @@ _Adapted from <https://github.com/tseemann/snippy>. Follow the link to see the f
 Extension | Description
 ----------|--------------
 .tab | A simple [tab-separated](http://en.wikipedia.org/wiki/Tab-separated_values) summary of all the variants
-.html | A [HTML](http://en.wikipedia.org/wiki/HTML) version of the .tab file ffor viewing in a web browser like Chrome or Safari
+.html | A [HTML](http://en.wikipedia.org/wiki/HTML) version of the .tab file for viewing in a web browser like Chrome or Safari
 .bam | The alignments in [BAM](http://en.wikipedia.org/wiki/SAMtools) format. Includes unmapped, multimapping reads. Excludes duplicates.
 .bam.bai | Index for the .bam file
 .aligned.fa | A version of the reference but with `-` at position with `depth=0` and `N` for `0 < depth < --mincov` (**Note: snippy manual says this file "does not have variants," but in the current version 4.6.0 it does incorporate the single nucleotide variants**)
@@ -122,7 +122,6 @@ bwa mem \
 	reads/COV1650_2.fastq.gz | \
 	samtools view -bS -F 4 - | \
 	samtools sort -o COV1650_sorted.bam -
-
 samtools index COV1650_sorted.bam
 ```
 **Settings**
@@ -166,9 +165,7 @@ ivar trim \
 	-i COV1650_sorted.bam \
 	-b reference/nCoV-2019.ivar.bed \
 	-p COV1650.trimmed
-
 samtools sort -o COV1650.trimmed_sorted.bam COV1650.trimmed.bam
-
 samtools index COV1650.trimmed_sorted.bam
 ```
 
@@ -198,6 +195,8 @@ Use iVar to generate a table of variants as well as a consensus genome sequence.
 
 **Commands**
 
+_Command 2.3.1_: Generate pileup file
+
 ```
 samtools mpileup \
 	-aa \
@@ -207,12 +206,20 @@ samtools mpileup \
 	--reference reference/nCoV-2019.reference.fasta \
 	COV1650.trimmed_sorted.bam \
 	> COV1650.pileup.txt
+```
 
+_Command 2.3.2_: Call variants based on pileup output
+
+```
 ivar variants \
 	-p COV1650.variants \
 	-t 0.03 \
 	< COV1650.pileup.txt
+```
 
+_Command 2.3.3_: Generate consenus sequence based on pileup output
+
+```
 ivar consensus \
 	-m 10 \
 	-q 20 \
