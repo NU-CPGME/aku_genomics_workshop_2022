@@ -11,6 +11,8 @@ Use the presentation time to download the demo data we'll be using in the exerci
 
 ### [Download data](https://downgit.github.io/#/home?url=https://github.com/NU-CPGME/aku_genomics_workshop_2022/tree/master/demo_data)
 
+### View the presentation slides [here](presentations/NextGenSeqIntro.pdf).
+
 ---
 
 # [Back to table of contents](../README.md)
