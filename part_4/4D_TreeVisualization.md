@@ -21,9 +21,9 @@ library(ggplot2)
 library(ggsci)
 
 
-Metadata<-read.csv("~/Documents/C-PGME/Workshop2022/WorkshopMaterials_Lorenzo/Phylodynamics/SARSCoV2_BA4.metadata.tsv",sep = "\t", header = TRUE, stringsAsFactors = T)
+Metadata<-read.csv("/path/to/SARSCoV2_BA4.metadata.tsv",sep = "\t", header = TRUE, stringsAsFactors = T)
 
-time_tree <- read.nexus("~/Documents/C-PGME/Workshop2022/WorkshopMaterials_Lorenzo/Phylodynamics/2022-05-03_mugration/annotated_tree.nexus")
+time_tree <- read.nexus("/path/to/annotated_tree.nexus")
 TreeData<-as.data.frame(as_tibble(time_tree))
 names(TreeData)[4]<-"strain"
 
