@@ -1,7 +1,7 @@
 
 # TreeVisualization
 
-### Click here to view the full R script: [TreeVisualization.md](TreeVisualization.md)
+### Click here to view the full R script: [TreeVisualization.Rmd](TreeVisualization.md)
 
 ### The expected output of the commands is found here: [TreeVisualization.pdf](TreeVisualization.pdf)
 
