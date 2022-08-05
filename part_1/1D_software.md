@@ -25,13 +25,13 @@ System requirements and installer downloads for Mac, PC, and Linux can be found 
 * Mac: Double-click the downloaded .pkg file. Accept all the default settings.
 * Linux: In the terminal window, run
 
-```
+```Shell
 bash Miniconda3-latest-Linux-x86_64.sh
 ```
 
 ### Step 1.C - Verify installation:
 
-```
+```Shell
 conda list
 ```
 
@@ -41,7 +41,7 @@ If you see a list of installed packages in your Terminal window, you're good!
 
 Enter the following commands, either one at a time or cut and paste all of them into your terminal. The order of the commands is important, though. For more information, check out [Bioconda](https://bioconda.github.io/)
 
-```
+```Shell
 conda config --add channels defaults
 conda config --add channels bioconda
 conda config --add channels conda-forge
@@ -54,7 +54,7 @@ Conda environments can be set up by 1) manually creating a new environment and t
 
 **Option 1**: We will start by creating an environment called "ws_test1", activating the environment, and then installing a single software package called "circlator" with its dependencies.
 
-```
+```Shell
 conda create -n ws_test1
 conda activate ws_test1
 conda install circlator
@@ -66,7 +66,7 @@ When you are done using the environment, you can exit it using the `conda deacti
 
 **Option 2**: You can also create an environment and install software in the environment in a single step like so:
 
-```
+```Shell
 conda create -n ws_test1 circlator
 ```
 
@@ -78,7 +78,7 @@ New software can be installed in an existig environment by activating the enviro
 
 To create an environment from a .yml environemnt file called "environment.yml", use the following command:
 
-```
+```Shell
 conda env create -f environment.yml
 ```
 
@@ -102,7 +102,7 @@ As an example, we're going to download the source code of [Filtlong](https://git
 
 Below are the commands to "clone" (copy) the Github repository for Filtlong onto your computer and compile and test it.
 
-```
+```Shell
 mkdir ~/applications
 cd ~/applications
 git clone https://github.com/rrwick/Filtlong
