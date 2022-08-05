@@ -19,14 +19,14 @@ We'll start with alignment of the _S. pyogenes_ reads against the reference geno
 
 > <img src="../images/warn.png" width="25" /> NOTE: On MacOS, the conda version of snippy is broken. To install manually if you have [HomeBrew](../part_1/1A_computer_preparation.md#step-3---mac-only-install-xcode-command-line-tools-and-homebrew): 
 > 
-> ```
+> ```Shell
 > brew install brewsci/bio/snippy
 > brew install brewsci/bio/vt
 > ```
 > 
 > If you don't have HomeBrew:
 > 
-> ```
+> ```Shell
 > git clone https://github.com/tseemann/snippy.git $HOME/snippy
 > echo "export PATH=$HOME/snippy/bin:\$PATH" >> ~/.bashrc
 > source ~/.bashrc
@@ -36,7 +36,7 @@ We'll start with alignment of the _S. pyogenes_ reads against the reference geno
 > 
 > Then install the rest of items needed in the conda environment:
 > 
-> ```
+> ```Shell
 > conda create -n alignment ivar
 > ``` 
 >
@@ -44,11 +44,11 @@ We'll start with alignment of the _S. pyogenes_ reads against the reference geno
 
 **Commands**
 
-```
+```Shell
 conda activate alignment
 ```
 
-```
+```Shell
 snippy \
 	--outdir GAS_alignment \
 	--reference reference/GAS_NGAS638.gbk \
