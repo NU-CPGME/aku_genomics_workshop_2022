@@ -15,11 +15,11 @@ Now we'll generate a _de novo_ whole genome assembly from our trimmed reads. For
 
 Activate conda environment if you haven't already 
 
-```
+```Shell
 conda activate assembly
 ```
 
-```
+```Shell
 spades.py \
     -o GAS_assembly \
     -1 GAS_trimmed_paired_1.fastq.gz \
@@ -65,7 +65,7 @@ A tool that can be used for calculating these values is [Quast](http://quast.sou
 
 **Commands**
 
-```
+```Shell
 quast GAS_assembly/contigs.fasta
 ```
 

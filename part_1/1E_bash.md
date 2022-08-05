@@ -20,7 +20,7 @@ Finally, end the loop with `done`.
 
 Example:
 
-```
+```Shell
 for i in 1 2 3 A B C  
 do  
 echo $i  
@@ -43,7 +43,7 @@ C
 
 A more complicated example (leading spaces added for readability only):
 
-```
+```Shell
 for file in Ecoli.fasta Kleb.fasta 
 do
     echo "Working on $file"
@@ -57,7 +57,7 @@ You can also use the wildcard symbol `*` to auto-generate a variable list instea
 
 For example, if you have several files in a directory named "genomes" ending with .fasta and you want to perform the same function on all of them, you could start your loop with:
 
-```
+```Shell
 for i in genomes/*.fasta
 do
 [etc.]
@@ -78,7 +78,7 @@ Three
 
 To use these variables in your loop, use the `while read` functions:
 
-```
+```Shell
 while read var
 do
     echo $var
@@ -96,7 +96,7 @@ figs John
 
 Multiple variable loop example:
 
-```
+```Shell
 while read food name
 do
     echo "$name likes to eat $food"
@@ -160,7 +160,7 @@ For example, in the string `genome_187.fasta`, applying the substitute command `
 
 Now to actually apply the substitution command, you need to use Perl, a programming language built into MacOS and nearly all Linux distributions, to run it. For that we'll pipe the string we want to change into the perl one-liner command, which would look like this. 
 
-```
+```Shell
 echo "genome_187.fasta" | perl -pe "s/\d+/one/"
 ```
 
@@ -168,7 +168,7 @@ This construction can be very useful in bash loops, for example, when we want to
 
 For example:
 
-```
+```Shell
 for input in file1.fastq file2.fastq file3.fastq
 do
     prefix=` echo $input | perl -pe "s/.fastq//" `
@@ -186,7 +186,7 @@ If there are sets of commands or loops that you use repeatedly, you probably don
 
 For example, you could create a simple text file using a text editor or `nano` called "my_first_script.sh" that contains the following commands:
 
-```
+```Shell
 echo "Working hard" > test_file.txt
 cp test_file.txt new_file.txt
 echo "Hardly working" >> new_file.txt
@@ -197,7 +197,7 @@ Then to run the commands in that file, just type `sh my_first_script.sh` and see
 
 You can really make your script files flexible by adding the option to put variables on the command line. For example, we can create a new file called "my_second_script.sh" that has these commands:
 
-```
+```Shell
 echo "$1" > test_file.txt
 cp test_file.txt new_file.txt
 echo "$2" >> new_file.txt
@@ -206,7 +206,7 @@ cat new_file.txt
  
  The `$1` and `$2` variables refer to the first and second arguments on the command line, respetively. So now if you run the following command: 
 
-```
+```Shell
 sh my_second_script.sh open shut
 ```
 

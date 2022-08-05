@@ -7,7 +7,7 @@
 
 ---
 
-```
+```Shell
 conda activate annotation
 ```
 
@@ -15,15 +15,14 @@ conda activate annotation
 
 If you have [HomeBrew](../part_1/1A_computer_preparation.md#step-3---mac-only-install-xcode-command-line-tools-and-homebrew) installed: 
 
-```
+```Shell
 brew install brewsci/bio/prokka
 sudo cpan install Bio::SearchIO::hmmer
-
 ```
 
 If you didn't install HomeBrew:
 
-```
+```Shell
 sudo cpan Time::Piece XML::Simple Digest::MD5 Bio::Perl Bio::SearchIO::hmmer
 git clone https://github.com/tseemann/prokka.git $HOME/prokka
 $HOME/prokka/bin/prokka --setupdb
@@ -35,7 +34,7 @@ Genome annotation is the process of determining the key features of the genome. 
 
 **Commands**
 
-```
+```Shell
 prokka \
     --outdir GAS_annotation \
     --prefix GAS_example \
@@ -86,7 +85,7 @@ A. Search the genome assembly for the fbaA gene sequence. This will generate the
 
 (**NOTE:** If you are on a Mac and used the self-installed version of prokka, run `conda activate assembly` to use blast)
 
-```
+```Shell
 blastn \
     -query reference/fbaA.fasta \
     -subject GAS_assembly/contigs.fasta 
@@ -94,7 +93,7 @@ blastn \
  
 B. Search the prokka annotation for the FbaA protein sequence. Here we'll generate a tabular output format instead.
 
-```
+```Shell
 blastp \
     -query reference/FbaA.faa \
     -subject GAS_annotation/GAS_example.faa \
@@ -111,7 +110,7 @@ Setting | Descripton
 
 For more information on settings and how to further customize output formats, run the blast program with the `-help` setting, i.e.
 
-```
+```Shell
 blastn -help
 ``` 
 

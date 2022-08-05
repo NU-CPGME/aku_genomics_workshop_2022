@@ -31,7 +31,7 @@ This is used to download files from internet links (HTTP, HTTPS, FTP or FTPS). F
 
 Example (download a text file from the internet):
 
-```
+```Shell
 wget https://www.w3.org/TR/PNG/iso_8859-1.txt
 ```
 
@@ -44,6 +44,7 @@ A common method for copying to or from a server:
 ```
 rsync -a -L --progress <source> <destination>
 ```
+
 * `-a` Archive option. 
 * `-L` Copy files that symlinks are pointing to, not the symlink pointer
 * `--progress` Shows the progress of the transfer

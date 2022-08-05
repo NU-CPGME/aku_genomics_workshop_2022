@@ -93,19 +93,19 @@ WSL sets up a separate home folder for Ubuntu. We'll be doing most of our work i
 
 In the Mac terminal, run the following command:
 
-```
+```Shell
 xcode-select --install
 ```
 
 The download and installation will take several minutes. Test the installation after download with the following command:
 
-```
+```Shell
 xcode-select -p
 ```
 
 The installation was successful if the output is something like this:
 
-```
+```Shell
 /Library/Developer/CommandLineTools
 ```
 
@@ -113,7 +113,7 @@ The installation was successful if the output is something like this:
 
 To install:
 
-```
+```Shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 

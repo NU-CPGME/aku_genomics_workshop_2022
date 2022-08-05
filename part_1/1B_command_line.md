@@ -70,6 +70,7 @@ The `mv` function can be used either for moving a file or directory to a new loc
 mv <current file location> <new file location>
 ```
 Usage for renaming the file is:
+
 ```
 mv <file> <new_file_name>
 ```
@@ -79,6 +80,7 @@ mv <file> <new_file_name>
 The `ln` function creates a symbolic link or "symlink" of a file or directory. This creates a pointer to a file's location. This allows you to make "copies" of a file or directory in a new place without taking up space.
 
 Usage is:
+
 ```
 ln -s <original file> <name and location of new file>
 ``` 
@@ -106,7 +108,7 @@ The `|` is the "pipe" character. It is used to string commands together such tha
 
 Here is a simple example of three commands piped together:
 
-```
+```Shell
 echo "B C A" | tr " " "\n" | sort
 ```
 
@@ -151,13 +153,15 @@ The `screen` application should be standard on Ubuntu 18 and 20, most other flav
 ```
 Cannot make directory '/run/screen': Permission denied
 ``` 
+
 If you see this, run the following commands:
 
-```
+```Shell
 mkdir ~/.screen
 chmod 700 ~/.screen
 echo "export SCREENDIR=$HOME/.screen" >> ~/.bashrc 
 ```
+
 Then exit and restart your terminal. Should work now.
 
 * To disconnect from a screen session, but leave it running in the background: `ctrl+a` then `d` to "detatch"

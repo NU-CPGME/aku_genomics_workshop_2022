@@ -9,7 +9,7 @@
 
 **Before we start:**
 
-```
+```Shell
 conda activate asssembly
 ```
 
@@ -30,7 +30,7 @@ FastQC provides quality metrics for read files and shows the output in graphical
 
 _Commands_
 
-```
+```Shell
 fastqc reads/GAS_1.fastq.gz reads/GAS_2.fastq.gz
 ```
 
@@ -54,7 +54,7 @@ Trimmomatic comes with adapter sequence files corresponding to most Illumina lib
 
 _Commands_ 
 
-```
+```Shell
 trimmomatic \
 	PE \
 	reads/GAS_1.fastq.gz reads/GAS_2.fastq.gz \
