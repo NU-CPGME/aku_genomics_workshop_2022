@@ -64,7 +64,7 @@ snippy \
 > ```
 > If so, it's due to a small glitch in how brewcamp installs python3. Just run the following command to fix it:
 > 
-> ```
+> ```Shell
 > ln -s "$(brew --prefix)/bin/python"{3,}
 > ```
 > 
@@ -115,7 +115,7 @@ Align reads to the reference sequence using `bwa mem` and use `samtools view` an
 
 **Commands**
 
-```
+```Shell
 bwa mem \
 	reference/nCoV-2019.reference.fasta \
 	reads/COV1650_1.fastq.gz \
@@ -159,7 +159,7 @@ Trim amplification primers from the reads in the alignment using iVar.
 
 **Commands**
 
-```
+```Shell
 ivar trim \
 	-q 20 \
 	-i COV1650_sorted.bam \
@@ -197,7 +197,7 @@ Use iVar to generate a table of variants as well as a consensus genome sequence.
 
 _Command 2.3.1_: Generate pileup file
 
-```
+```Shell
 samtools mpileup \
 	-aa \
 	-A \
@@ -210,7 +210,7 @@ samtools mpileup \
 
 _Command 2.3.2_: Call variants based on pileup output
 
-```
+```Shell
 ivar variants \
 	-p COV1650.variants \
 	-t 0.03 \
@@ -219,7 +219,7 @@ ivar variants \
 
 _Command 2.3.3_: Generate consenus sequence based on pileup output
 
-```
+```Shell
 ivar consensus \
 	-m 10 \
 	-q 20 \
